@@ -16,10 +16,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_10_054701) do
     t.string "address", null: false
     t.string "phone_number", null: false
     t.string "category", null: false
-    t.integer "review_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["review_id"], name: "index_restaurants_on_review_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -31,6 +29,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_10_054701) do
     t.index ["restaurant_id"], name: "index_reviews_on_restaurant_id"
   end
 
-  add_foreign_key "restaurants", "reviews"
   add_foreign_key "reviews", "restaurants"
 end

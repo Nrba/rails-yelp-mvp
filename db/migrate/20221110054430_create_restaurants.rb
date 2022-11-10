@@ -8,7 +8,6 @@ class CreateRestaurants < ActiveRecord::Migration[7.0]
       t.string :address, null: false
       t.string :phone_number, null: false
       t.string :category, null: false
-      t.references :review, foreign_key: true
 
       t.timestamps
     end
